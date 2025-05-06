@@ -16,14 +16,14 @@ else
     end
 end
 
-# Get `fish_user_paths` in reverse order to maintain order when re-adding
-set -l user_paths (printf '%s\n' $fish_user_paths | tac)
+# # Get `fish_user_paths` in reverse order to maintain order when re-adding
+# set -l user_paths (printf '%s\n' $fish_user_paths | tac)
 
-# Move things in $fish_user_paths to the front of $PATH
-# When we run `eval (brew shellenv)` it ends up putting things
-# out of order.
-# The assumption is that the user paths are the ones that we want
-# as overrides, so it should be at the front of the path.
-for user_path in $user_paths
-    fish_add_path -m $user_path
-end
+# # Move things in $fish_user_paths to the front of $PATH
+# # When we run `eval (brew shellenv)` it ends up putting things
+# # out of order.
+# # The assumption is that the user paths are the ones that we want
+# # as overrides, so it should be at the front of the path.
+# for user_path in $user_paths
+#     fish_add_path -m $user_path
+# end
